@@ -1,0 +1,45 @@
+<div class="movie-detail-box">
+  <div class="movie-detail-info" [style]="fon(movie.backdrop_path)">
+    <div class="movie-detail-img">
+      <img [src]="movieImg+movie.poster_path" alt="test">
+    </div>
+    <div class="movie-wrapper">
+      <div class="movie-detail-all-box">
+        <span class="movie-detail-all-title">{{movie.original_title}}</span>
+        <span class="movie-detail-all-date">({{movie.release_date.split("-")[0]}})</span>
+      </div>
+      <div class="movie-detail-all-vote">
+        <span class="movie-detail-all-vote-title">Vote Average:</span>
+        <ngb-rating [(rate)]="movie.vote_average" [readonly]="true"></ngb-rating>
+        <span class="movie-detail-all-vote-number">{{movie.vote_average}}/<strong>10</strong></span>
+      </div>
+      <div class="movie-detail-all-genres">
+        <span>Genres:</span>
+        <div>
+          <ul *ngFor="let o of movie.genres">
+            <li>{{o.name}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="movie-detail-all-popular">
+        Popularity:<span>{{movie.popularity}}</span>
+      </div>
+      <div class="movie-detail-all-over">
+        Overview:<span>{{movie.overview}}</span>
+      </div>
+      <div class="play">
+      <mat-icon (click)="play()">play_circle_filled</mat-icon>
+      </div>
+    </div>
+    <div *ngIf="flag" class="play-video">
+      <iframe
+        loading="lazy"
+        width="800"
+        height='415'
+        [src]="movieVideo(video.results[0].key)"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+

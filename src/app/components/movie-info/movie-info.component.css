@@ -1,0 +1,23 @@
+.movie-info{
+  width: 200px;
+  min-height: 70px;
+}
+.movie-info span{
+  color: #05438b;
+}
+.title{
+  margin: 5px 0 0 5px;
+}
+.title span{
+  color: white;
+  font-size: 18px;
+}
+.over{
+  margin: 6px 0 0 5px;
+}
+.over{
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Big Caslon";
+}

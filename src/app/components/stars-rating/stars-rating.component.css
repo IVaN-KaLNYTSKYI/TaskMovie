@@ -1,0 +1,22 @@
+.def-rat{
+  position: relative;
+  display: inline-block;
+}
+.poi-rat{
+  position: absolute;
+  display: inline-block;
+  color: red;
+  overflow: hidden;
+}
+.movie-vote_average{
+  width: 30px;
+  height: 30px;
+  border:none;
+  border-radius: 25px 0 25px 25px;
+  background: #77a0e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+

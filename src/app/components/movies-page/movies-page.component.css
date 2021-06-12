@@ -1,0 +1,12 @@
+mat-icon{
+  width: 60px;
+  height: 60px;
+  font-size: 60px;
+  cursor: pointer;
+}
+.movies-page{
+  margin: 40px 0 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

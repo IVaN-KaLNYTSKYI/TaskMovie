@@ -1,0 +1,8 @@
+<div class="movies-page">
+  <mat-icon (click)="firstPage()" disabled="page===1" >fast_rewind</mat-icon>
+  <mat-icon (click)="back()" disabled="page===1" >chevron_left</mat-icon>
+  <span>Сторінка-{{page}}</span>
+  <mat-icon (click)="next()" disabled="page===500" >navigate_next</mat-icon>
+  <mat-icon (click)="lastPage()" disabled="page===500" >fast_forward</mat-icon>
+</div>
+

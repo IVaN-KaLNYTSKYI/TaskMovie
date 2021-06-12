@@ -1,0 +1,13 @@
+<div [class.header-dark]="theme" [class.header]="!theme">
+  <div class="header-link">
+    <a routerLink="/movie">Movie</a>
+  </div>
+  <div>
+    <span [class.light]="!theme" [class.light-dark]="theme">☀︎</span>
+    <mat-slide-toggle (change)="them($event)" [checked]="theme"></mat-slide-toggle>
+    <span [class.dark]="theme" [class.dark-light]="!theme">☾</span>
+  </div>
+  <div class="header-user">
+    <app-user-info></app-user-info>
+  </div>
+</div>

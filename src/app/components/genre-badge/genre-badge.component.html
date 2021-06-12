@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]="myForm" (change)="save()">
+    <select [formControlName]="'id'">
+      <option *ngFor="let o of genres.genres" [ngValue]="o.id">
+        {{o.name}}
+      </option>
+    </select>
+  </form>
+</div>

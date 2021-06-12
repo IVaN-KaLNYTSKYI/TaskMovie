@@ -1,0 +1,20 @@
+<div [class.movies-list]="!dark()" [class.movies-list-dark]="dark()">
+  <div class="movies-list-box">
+    <app-movie-list-card *ngFor="let movie of movies?.results" [movie]="movie"></app-movie-list-card>
+  </div>
+  <!-- <hr>
+   <div class="movies-list-box" *ngIf="flag">
+     <app-movie-list-card *ngFor="let r of res" [movie]="r"></app-movie-list-card>  це було для select
+   </div>-->
+</div>
+<div class="movies-list-btn">
+  <app-movies-page [page]="movies.page"
+                   (nextClick)="next(1)"
+                   (backClick)="back(1)"
+                   (lastPageClick)="lastPage(movies.total_pages)"
+                   (firstPageClick)="firstPage(1)">
+
+  </app-movies-page>
+  <!--<app-genre-badge (idGenres)="fil($event)"> це було для select
+  </app-genre-badge>-->
+</div>

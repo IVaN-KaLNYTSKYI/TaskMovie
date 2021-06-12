@@ -1,0 +1,12 @@
+<div [class.movie-list-card]="!dark()" [class.movie-list-card-dark]="dark()" (click)="detail()">
+  <div class="movie-list-card-img">
+    <app-poster-preview [img]="movie.poster_path"></app-poster-preview>
+  </div>
+  <div class="movie-list-card-info">
+    <app-movie-info [overview]="movie.overview" [title]="movie.title"></app-movie-info>
+  </div>
+  <div class="movie-list-card-star">
+    <app-stars-rating [star]="movie.vote_average"></app-stars-rating>
+  </div>
+</div>
+

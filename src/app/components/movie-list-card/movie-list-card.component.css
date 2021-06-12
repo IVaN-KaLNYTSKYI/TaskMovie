@@ -1,0 +1,31 @@
+.movie-list-card {
+  width: 230px;
+  min-height: 500px;
+  border-radius: 20px;
+  margin: 10px;
+  background: #1b79cd;
+  position: relative;
+}
+
+.movie-list-card-star {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.movie-list-card-info {
+  margin: 5px 0 5px 0;
+}
+
+.movie-list-card-btn button {
+  width: 56px;
+  height: 33px;
+  background: cornflowerblue;
+  border-radius: 0 0 20px 0;
+  border: none;
+}
+
+.movie-list-card-btn {
+  display: flex;
+  justify-content: flex-end;
+}
