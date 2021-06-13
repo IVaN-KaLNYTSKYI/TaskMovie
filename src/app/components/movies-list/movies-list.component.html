@@ -1,13 +1,23 @@
-<div [class.movies-list]="!dark()" [class.movies-list-dark]="dark()">
+<div *ngIf="!movieLoading" class="loaning">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="movieLoading" class="search">
+  <form [formGroup]="myForm" (input)="search()">
+    <input type="text" [formControlName]="'text'" placeholder="Movie....">
+  </form>
+</div>
+<div *ngIf="movieLoading" [class.movies-list]="!dark()" [class.movies-list-dark]="dark()">
+  <app-movies-filter (noPopularClick)="noPopular('popularity.asc')"
+                     (popularClick)="popular('popularity.desc')"
+                     (ratingClick)="rating('vote_average.desc')"
+                     (noRatingClick)="noRating('vote_average.asc')"
+  >
+  </app-movies-filter>
   <div class="movies-list-box">
     <app-movie-list-card *ngFor="let movie of movies?.results" [movie]="movie"></app-movie-list-card>
   </div>
-  <!-- <hr>
-   <div class="movies-list-box" *ngIf="flag">
-     <app-movie-list-card *ngFor="let r of res" [movie]="r"></app-movie-list-card>  це було для select
-   </div>-->
 </div>
-<div class="movies-list-btn">
+<div *ngIf="movieLoading" class="movies-list-btn">
   <app-movies-page [page]="movies.page"
                    (nextClick)="next(1)"
                    (backClick)="back(1)"
@@ -15,6 +25,4 @@
                    (firstPageClick)="firstPage(1)">
 
   </app-movies-page>
-  <!--<app-genre-badge (idGenres)="fil($event)"> це було для select
-  </app-genre-badge>-->
 </div>

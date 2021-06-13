@@ -18,7 +18,9 @@ import {RouterModule, Routes} from '@angular/router';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
-import {MatSlideToggle, MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { MoviesFilterComponent } from './components/movies-filter/movies-filter.component';
+import {MatProgressSpinnerModule }from "@angular/material/progress-spinner";
 
 let routes: Routes = [
   {path: 'movie', component:MoviesListComponent },
@@ -38,6 +40,7 @@ let routes: Routes = [
     MoviesPageComponent,
     GenreBadgeComponent,
     MovieDetailComponent,
+    MoviesFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,8 @@ let routes: Routes = [
     BrowserAnimationsModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
