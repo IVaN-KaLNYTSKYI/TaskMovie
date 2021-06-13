@@ -23,7 +23,7 @@ import { MoviesFilterComponent } from './components/movies-filter/movies-filter.
 import {MatProgressSpinnerModule }from "@angular/material/progress-spinner";
 
 let routes: Routes = [
-  {path: 'movie', component:MoviesListComponent },
+  {path: '', component:MoviesListComponent },
   {path: 'movie/:id', component:MovieDetailComponent},
 ];
 

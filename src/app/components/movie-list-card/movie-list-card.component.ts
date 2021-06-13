@@ -18,7 +18,7 @@ export class MovieListCardComponent implements OnInit {
   }
 
   detail() {
-    this.router.navigate([this.movie.id], {relativeTo: this.activatedRoute});
+    this.router.navigate(["movie/",this.movie.id], {relativeTo: this.activatedRoute});
   }
 
   dark() {
