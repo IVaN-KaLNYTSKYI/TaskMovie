@@ -15,32 +15,31 @@ export class MoviesService {
     discover: '/discover/movie',
     movie: '/movie/',
     search: "/search/movie",
-    page: "&page=",
+    page: "?page=",
     video:'/videos',
   }
 
   private filters = {
-    popular: '&sort_by=',
+    popular: '?sort_by=',
 
   }
   private base = "https://api.themoviedb.org/3"
-  private API_KEY = "?api_key=8aaf14eada5c1779a594aaa553b31207"
 
   constructor(private httpClient: HttpClient) {
   }
   getMovies(page:number):Observable<Movies>{
-    return this.httpClient.get<Movies>(this.base+this.path.discover+this.API_KEY+this.path.page+page)
+    return this.httpClient.get<Movies>(this.base+this.path.discover+this.path.page+page)
   }
   getMovieId(id:number): Observable<ResultsMovie> {
-    return this.httpClient.get<ResultsMovie>(this.base + this.path.movie + id + this.API_KEY)
+    return this.httpClient.get<ResultsMovie>(this.base + this.path.movie + id)
   }
   getVideo(id:number):Observable<MovieVideo>{
-    return this.httpClient.get<MovieVideo>(`${this.base}${this.path.movie}${id}${this.path.video}${this.API_KEY}`)
+    return this.httpClient.get<MovieVideo>(`${this.base}${this.path.movie}${id}${this.path.video}`)
   }
   getMoviesPopular(sort:string):Observable<Movies>{
-    return this.httpClient.get<Movies>(this.base+this.path.discover+this.API_KEY+this.filters.popular+sort)
+    return this.httpClient.get<Movies>(this.base+this.path.discover+this.filters.popular+sort)
   }
   getMovieSearch(text:string):Observable<Movies>{
-    return this.httpClient.get<Movies>(this.base+this.path.search+this.API_KEY+"&query="+text)
+    return this.httpClient.get<Movies>(this.base+this.path.search+"?query="+text)
   }
 }

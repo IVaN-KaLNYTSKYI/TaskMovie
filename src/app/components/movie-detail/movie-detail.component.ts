@@ -27,7 +27,6 @@ export class MovieDetailComponent implements OnInit {
     })
     this.moviesService.getVideo(this.id).subscribe(value => {
       this.video = value
-      console.log(this.video)
     })
   }
 

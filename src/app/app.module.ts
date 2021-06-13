@@ -11,7 +11,7 @@ import {StarsRatingComponent} from './components/stars-rating/stars-rating.compo
 import {MovieInfoComponent} from './components/movie-info/movie-info.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {MoviesPageComponent} from './components/movies-page/movies-page.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -21,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { MoviesFilterComponent } from './components/movies-filter/movies-filter.component';
 import {MatProgressSpinnerModule }from "@angular/material/progress-spinner";
+import {MovieInterceptorService} from "./services/movie-interceptor.service";
 
 let routes: Routes = [
   {path: '', component:MoviesListComponent },
@@ -54,7 +55,13 @@ let routes: Routes = [
     MatProgressSpinnerModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:MovieInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
